@@ -1,0 +1,968 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0064)https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths t-chrome t-chrome150"><head id="ctl00_Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="./Student View_files/DXR.axd"><link rel="stylesheet" type="text/css" href="./Student View_files/DXR(1).axd"><link rel="stylesheet" type="text/css" href="./Student View_files/DXR(2).axd"><meta http-equiv="X-UA-Compatible" content="IE=9"><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9"><meta name="keywords" content="University Management Information System UMIS"><meta name="description">
+    <style type="text/css">
+        .auto-style2 {
+            width: 93px;
+            height: 37px;
+        }
+
+        .auto-style3 {
+            height: 37px;
+        }
+
+        .auto-style4 {
+            width: 93px;
+            height: 42px;
+        }
+
+        .auto-style5 {
+            height: 42px;
+        }
+
+        .auto-style6 {
+            height: 38px;
+        }
+    </style>
+
+    
+
+  
+    
+    <script src="./Student View_files/jquery-3.2.1.min.js.download"></script>
+    
+
+    <link href="./Student View_files/AutoComplete.css" rel="stylesheet" type="text/css"><link id="ctl00_Link1" href="./Student View_files/style1.css" rel="stylesheet" type="text/css"><link href="./Student View_files/msgBoxLight.css" rel="stylesheet" type="text/css"><link href="./Student View_files/ui-progress-bar.css" rel="stylesheet" type="text/css"><link href="./Student View_files/jquery-ui-1.10.4.custom.css" rel="stylesheet"><link href="./Student View_files/telerikstyles.css" rel="stylesheet" type="text/css">
+
+    <script src="./Student View_files/jquery-1.10.2.min.js.download" type="text/javascript"></script>
+   	
+    
+    <script type="text/javascript" id="menujs" src="./Student View_files/main.js.download"></script>
+    
+    <script type="text/javascript" src="./Student View_files/jquery.collapse.js.download"></script>
+    
+    <script type="text/javascript" src="./Student View_files/jquery.tinyscrollbar.min.js.download"></script>
+   <script type="text/javascript" charset="utf-8" src="./Student View_files/nav.js.download"></script>
+    <script type="text/javascript" src="./Student View_files/modernizr-2.6.1.min.js.download"></script>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="./Student View_files/jquery.newsTicker.js.download"></script>
+    <script type="text/javascript" src="./Student View_files/ClientSideTreePopupControl.js.download"></script>
+    <script type="text/javascript" src="./Student View_files/AutoComplete.js.download"></script>
+    <script type="text/javascript" src="./Student View_files/jquery.msgBox.js.download"></script>
+    <script type="text/javascript" src="./Student View_files/msgBoxMethods.js.download"></script>
+ <script type="text/javascript">
+     
+     var submit = 0;
+     function CheckDouble() {
+         if (++submit > 1) {
+             return false;
+         }
+     }
+     //start Marwa 12/4/2022 18213
+     function ValidNumeric1TO5(e) {
+         var charCode = (event.which) ? event.which : event.keyCode;
+         if (charCode >= 49 && charCode <= 53)
+         { return true; }
+         else
+         { return false; }
+     }
+     function ValidNumeric1TO3(e) {
+         var charCode = (event.which) ? event.which : event.keyCode;
+         if (charCode >= 49 && charCode <= 51)
+         { return true; }
+         else
+         { return false; }
+     }
+     //End Marwa 12/4/2022 18213
+     //eman moustafa Bug:15465
+     function Build() {
+         //alert(element_1);
+       
+      }
+ </script>
+    
+ 
+    <script language="javascript" type="text/javascript" defer="true">
+        
+        function chkprint(divid) {
+            var panel = document.getElementById(divid);
+            var printWindow = window.open('', '', 'height=400,width=800');
+            printWindow.document.write('<html><head>');
+            printWindow.document.write('</head><body >');
+            printWindow.document.write(panel.innerHTML);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            setTimeout(function () {
+                printWindow.print();
+            }, 500);
+            return false;
+        }
+        //window.history.forward();
+        if (document.all) {
+            document.onkeydown = function () {
+                var key_f5 = 116; // 116 = F5
+                if (key_f5 == event.keyCode) {
+                    event.keyCode = 0;
+                    //alert("Sorry! You can not refresh this page!");
+                }
+                //if (event.keyCode === 8) {
+                //    // try to cancel the backspace
+                //    return false;
+                //}
+            }
+        }
+
+        function hidestatus() {
+            window.status = ''
+            return true
+        }
+
+        if (document.layers)
+            document.captureEvents(Event.MOUSEOVER | Event.MOUSEOUT)
+
+        document.onmouseover = hidestatus;
+        document.onmouseout = hidestatus;
+
+        function CourseOpener(edCourseId) {
+            window.open('../../UI/Ed_Course/EntCoursePackageDtls.aspx?EdCourseId=' + edCourseId, '', 'toolbar=0,width=800,top=400,height=350,left=350,scrollbars=1');
+            return false;
+        }
+
+        function StudOpener(edStudId) {
+            window.open('../../UI/StaffView/StudData.aspx?EdStudId=' + edStudId, '', 'toolbar=0,width=950,height=500,left=350,scrollbars=1');
+            return false;
+        }
+        function StaffOpener(saStfMemberId) {
+            window.open('../../UI/StaffView/StaffData.aspx?ParamSaStfMemberId=' + saStfMemberId, '', 'toolbar=0,width=600,top=300,height=300,left=350,scrollbars=1');
+            return false;
+        }
+
+        function ToggleMenuDisplay() {
+            
+            var elem = document.getElementById("hideShow");
+            if (elem.style.display == "none") {
+                elem.style.display = "block";
+                document.getElementById("rightCol").style.width = "700px";
+                document.getElementById("spanShowHide").innerText = 'Hide';
+            }
+            else {
+                elem.style.display = "none";
+                document.getElementById("rightCol").style.width = "100%";
+                document.getElementById("spanShowHide").innerText = 'Show';
+            }
+
+            SaveMenuStatus();
+        }
+
+        function getItem(parent, tagName) {
+            if (parent == null)
+                return null;
+
+            var item = parent.firstChild;
+            do {
+                if (item.tagName == tagName)
+                    return item;
+            } while (item = item.nextSibling);
+            return null;
+        }
+        function showSubMenu(src, show) {
+            
+            var firstItem = getItem(document.getElementById("ctl00_mnuMain"), "UL");
+            firstItem = getItem(firstItem, "UL");
+            firstItem = getItem(firstItem, "LI");
+            var itemStyle = null;
+
+            if (firstItem) {
+                if (firstItem.currentStyle)
+                    itemStyle = firstItem.currentStyle;
+                else if (window.getComputedStyle)
+                    itemStyle = window.getComputedStyle(firstItem, null);
+            }
+
+            var display = (show) ? "block" : "none";
+            var link = getItem(src, "A");
+            var submenu = getItem(src, "UL");
+
+            if (link != null) {
+                link.style.color = (show && itemStyle) ? itemStyle.color : "";
+                link.style.backgroundColor = (show && itemStyle) ? itemStyle.backgroundColor : "";
+            }
+
+            if (submenu != null)
+                submenu.style.display = display;
+        }
+
+        function hsb_menu(args) {
+            var nodes = args.parentNode.childNodes;
+            for (var i = 0; i < nodes.length; i++) {
+                if (nodes.item(i).className == "") {
+                    if (nodes.item(i).style.display == "" || nodes.item(i).style.display == "block")
+                        nodes.item(i).style.display = "none";
+                    else
+                        nodes.item(i).style.display = "block";
+                }
+            }
+            SaveMenuStatus();
+        }
+
+    </script>
+    <style>
+          /*div[id$="_PW-1"] {
+            position: fixed !important;
+        }*/
+
+            .Search {
+              width: 55%;
+              font-size: 16px;
+              padding: 5px 20px 5px 40px;
+              border: 1px solid #ddd;
+              margin: 8px;
+            }
+    </style>
+    <title>
+	Student View
+</title><link href="./Student View_files/style.css" type="text/css" rel="stylesheet"><link href="./Student View_files/WebResource.axd" type="text/css" rel="stylesheet"></head>
+<body cz-shortcut-listen="true" style="" data-new-gr-c-s-check-loaded="14.1320.0" data-gr-ext-installed="">   
+    <form name="aspnetForm" method="post" action="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./Student View_files/WebResource(1).axd" type="text/javascript"></script>
+
+
+<script src="./Student View_files/WebResource(2).axd" type="text/javascript"></script>
+<script src="./Student View_files/WebResource(3).axd" type="text/javascript"></script>
+<script src="./Student View_files/WebResource(4).axd" type="text/javascript"></script>
+<script src="./Student View_files/ScriptResource.axd" type="text/javascript"></script>
+<script src="./Student View_files/ScriptResource(1).axd" type="text/javascript"></script>
+<script src="./Student View_files/ScriptResource(2).axd" type="text/javascript"></script>
+<script src="./Student View_files/webkit.js.download" type="text/javascript"></script>
+<script src="./Student View_files/ScriptResource(3).axd" type="text/javascript"></script>
+<script src="./Student View_files/ScriptResource(4).axd" type="text/javascript"></script>
+<script src="./Student View_files/ScriptResource(5).axd" type="text/javascript"></script>
+<script src="./Student View_files/ScriptResource(6).axd" type="text/javascript"></script>
+<script src="./Student View_files/ScriptResource(7).axd" type="text/javascript"></script>
+<script src="./Student View_files/ScriptResource(8).axd" type="text/javascript"></script>
+<script src="./Student View_files/ScriptResource(9).axd" type="text/javascript"></script>
+<script src="./Student View_files/ScriptResource(10).axd" type="text/javascript"></script>
+<script src="./Student View_files/ScriptResource(11).axd" type="text/javascript"></script>
+<script src="./Student View_files/ScriptResource(12).axd" type="text/javascript"></script>
+<script src="./Student View_files/ScriptResource(13).axd" type="text/javascript"></script>
+<script src="./Student View_files/ScriptResource(14).axd" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="619AD2A2">
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="+gbfD67V6sbwylyk92dSoMOK8twLyqqwhUVfEdemapX6DKJz0bXS2kN/f8pmyhshh/C0sqDbotttkd/pIStwDkb11bW46BfWPAPq9CxB0yZZEzQolpbAfRr11n4i/ApS+YPR0Jx6wAhpF85rrtB0FV+c4PS/I0XoSLdX4UnwIbhjnb8UQK173Pg9kK84cf9keSH1uvgZMmQKeUerAv9Aa0o+8vLVAJ3Sy7pTJJ3+8oRSJF30DN8pawLsgkEFluLwuki+KJ7E38G1PU+mC5s1p21h67iguz4ehU5EDyGUfxQYkiAjg2wNlwylabFu5T0L">
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', [], [], [], 360000, 'ctl00');
+//]]>
+</script>
+
+        <input type="hidden" id="ctl00_ASPxPopupControl1WS" name="ctl00_ASPxPopupControl1WS" value="0:0:-1:-10000:-10000:0:-10000:-10000:1"><script id="dxis_678655765" src="./Student View_files/DXR(3).axd" type="text/javascript"></script><script id="dxis_292924748" src="./Student View_files/DXR(4).axd" type="text/javascript"></script><script id="dxis_1830762576" src="./Student View_files/DXR(5).axd" type="text/javascript"></script><script id="dxis_1830796335" src="./Student View_files/DXR(6).axd" type="text/javascript"></script><div id="ctl00_ASPxPopupControl1_PW-1" style="position:absolute;left:0px;top:0px;z-index:10000;visibility:hidden;display:none;">
+	<table id="ctl00_ASPxPopupControl1_PWST-1" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;border-collapse:separate;position:relative;">
+		<tbody><tr>
+			<td class="dxpcControl" onmousedown="aspxPWMDown(event,&#39;ctl00_ASPxPopupControl1&#39;,-1,false)" style="width:200px;cursor:default;"><table id="ctl00_ASPxPopupControl1_CLW-1" cellspacing="0" cellpadding="0" border="0" style="width:200px;border-collapse:collapse;border-collapse:separate;">
+				<tbody><tr>
+					<td id="ctl00_ASPxPopupControl1_PWH-1" class="dxpcHeader" style="padding-left:12px;padding-right:2px;padding-top:2px;padding-bottom:2px;"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;border-collapse:separate;">
+						<tbody><tr>
+							<td class="dxpc" style="width:100%;">Header</td><td style="padding-left:4px;"><table cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;border-collapse:separate;">
+								<tbody><tr>
+									<td id="ctl00_ASPxPopupControl1_HCB-1" class="dxpcCloseButton" onclick="aspxPWCBClick(event, &#39;ctl00_ASPxPopupControl1&#39;,-1)" onmousedown="return aspxPWCBMDown(event);" style="cursor:pointer;"><img id="ctl00_ASPxPopupControl1_HCB-1Img" class="dxWeb_pcCloseButton" src="./Student View_files/DXR(7).axd" alt="[Close]"></td>
+								</tr>
+							</tbody></table></td>
+						</tr>
+					</tbody></table></td>
+				</tr><tr>
+					<td id="ctl00_ASPxPopupControl1_PWC-1" class="dxpcContent" style="height:100%;border-top-width:0px;"><div id="ctl00_ASPxPopupControl1_CSD-1" class="dxpcContentPaddings">
+						&nbsp;
+					</div></td>
+				</tr>
+			</tbody></table></td><td style="background:url(&#39;/DXR.axd?r=1_25-tZwj7&#39;) no-repeat left top;"></td>
+		</tr><tr>
+			<td style="background:url(&#39;/DXR.axd?r=1_24-tZwj7&#39;) no-repeat left top;"></td><td style="background:url(&#39;/DXR.axd?r=1_26-tZwj7&#39;) no-repeat left top;"><div style="height:5px;width:5px;">
+
+			</div></td>
+		</tr>
+	</tbody></table>
+</div><script id="dxss_1100111909" type="text/javascript">
+<!--
+aspxAddHoverItems('ctl00_ASPxPopupControl1',[[['dxpcCloseButtonHover'],[''],['HCB-1'],,[['']],['Img']]]);
+
+var dxo = new ASPxClientPopupControl('ctl00_ASPxPopupControl1');
+window['ctl00_ASPxPopupControl1'] = dxo;
+dxo.uniqueID = 'ctl00$ASPxPopupControl1';
+dxo.isPopupPositionCorrectionOn=false;
+dxo.width=0;
+dxo.height=0;
+dxo.InlineInitialize();
+
+//-->
+</script>
+        <!-- needed to fix Numeric box and calendar-->
+        <div style="display: none;">
+            <input name="ctl00$FixNumericBoxProblem" type="text" id="ctl00_FixNumericBoxProblem" onchange="NumericBox_FindItem(&#39;ctl00_FixNumericBoxProblem&#39;).OnTextChange(this);" onkeypress="return NumericBox_FindItem(&#39;ctl00_FixNumericBoxProblem&#39;).AddNumericItem(event, this);">
+            <input name="ctl00$txtFixCalendarProblem" type="text" id="ctl00_txtFixCalendarProblem" class="gridTextBox" style="width:90px;">
+            <input type="image" name="ctl00$btnFixCalendarProblem" id="ctl00_btnFixCalendarProblem" src="./Student View_files/calender.bmp" align="absmiddle" style="border-width:0px;">
+            <input type="hidden" name="ctl00$MaskedBirthDate_ClientState" id="ctl00_MaskedBirthDate_ClientState">
+            
+           <span id="ctl00_RegularExpressionValifdator4" style="color:Red;visibility:hidden;">Invalid Date Format</span>
+
+        </div>
+
+        <script language="javascript" type="text/javascript">
+            
+            function ShowTree(sender) {
+                
+                var rootPath = sender.parentNode.parentNode.parentNode.parentNode.id.replace("_EntityTreeTable", "_");
+
+                var url = '/UI/ENTITY_MAIN/SelectTreeDlg.aspx';
+            var params = "";
+            var style = "center:1;scroll=0;status:0;dialogWidth:350px;dialogHeight:400px";
+
+            var faculty = document.getElementById(rootPath + "hidFacultyEntityMainId").value;
+            if (faculty != "")
+                params += ((params == "") ? "" : "&") + "FacultyEntityMainId=" + faculty;
+
+            var entMainId = document.getElementById(rootPath + "hidEntityMainId").value;
+            if (entMainId != "")
+                params += ((params == "") ? "" : "&") + "EntMainId=" + entMainId;
+
+            var expandedNodes = document.getElementById(rootPath + "hidExpandedNodes").value;
+            if (expandedNodes != "")
+                params += ((params == "") ? "" : "&") + "ExpandedNodes=," + expandedNodes;
+
+            if (params != "")
+                url += "?" + params;
+            var ret = window.showModalDialog(url, null, style);
+
+            if (ret != null) {
+                var hasChanged = (document.getElementById(rootPath + "hidEntityMainId").value != ret.EntMainID);
+                document.getElementById(rootPath + "hidEntityMainId").value = ret.EntMainID;
+                document.getElementById(rootPath + "txtPath").value = ret.EntMainName;
+                document.getElementById(rootPath + "hidExpandedNodes").value = ret.ExpandedNodes;
+
+                if (hasChanged) {
+                    document.getElementById(rootPath + "btnPostback").click();
+                }
+            }
+        }
+        </script>
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                try {
+                    $('#scrollbar_help').tinyscrollbar();
+                    $('#scrollbar_menu_left').tinyscrollbar();
+                }
+                catch (SS) { }
+                
+
+                var oldids = '';
+                $("div[id*='_PG_UG_ASPxRoundPanel']").each(function (i, el) {
+                    oldids = oldids + (el.id.replace('_PG_UG_ASPxRoundPanel', '').replace('ctl00_cntphmaster_', '')) + ',';
+                    //.substring(el.id.indexOf('DegreeClassCtrl'))
+                    console.log(oldids);
+                });
+
+                if (oldids.length > 1) {
+
+                    var oldtextvalue = $('#ctl00_txthdndegreeclassctrl_Ids').val();
+
+                    
+                    oldids = oldids.substring(0, (oldids.length - 1));
+
+                    $('#ctl00_txthdndegreeclassctrl_Ids').val(oldids);
+
+                    console.log($('#ctl00_txthdndegreeclassctrl_Ids').val());
+
+                    if (oldtextvalue == "0")
+                        __doPostBack();
+                    //}
+                }
+            });
+
+            //$(document).ready(function () {
+                
+                
+            //});
+
+            //$(document).ready(function () {
+            //    $('#scrollbar_all_info').tinyscrollbar();
+            //});
+
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+            function EndRequestHandler(sender, args) {
+                RunScriptForScroll();
+            }
+
+
+            function RunScriptForScroll() {
+                //            $(document).ready(function () {
+                //                $('#scrollbar_all_info').tinyscrollbar();
+                //            });
+            }
+
+        </script>
+        <!----------------------------------------------------jquery-scrollbar------------------->
+        <div id="wrapper">
+            <div id="left-menu" class="MenuHide">
+                <div id="scrollbar_menu_left">
+                    <div class="scrollbar" style="height: 738px;">
+                        <div class="track" style="height: 738px;">
+                            <div class="thumb" style="top: 0px; height: 706.412px;">
+                                <div class="end">
+                                </div>
+                                <!--end-->
+                            </div>
+                            <!--thumb-->
+                        </div>
+                        <!--track-->
+                    </div>
+                    <!--scrollbar-->
+                    <div class="viewport">
+                        <div class="overview" style="top: 0px;">
+                            <div id="menu_left">
+                                <div id="accordion-example" data-collapse="accordion">
+                                    
+                                </div>
+                                
+                                <input name="ctl00$txtSearch" type="text" id="ctl00_txtSearch" class="Search" onkeyup="searchMenue()" placeholder="Go">
+                                
+                                <!--accordion-->
+                                <nav><ul id="nav"><li><a class="nav_MNU" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#">»&nbsp; الشئون الاكاديمية </a><ul><li><a class="nav_URL" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx">»&nbsp; Student Result</a></li></ul></li><li><a class="nav_MNU" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#">»&nbsp; My E-Services</a><ul><li><a class="nav_URL" href="https://sismed.merit.edu.eg/UI/StudentView/CourseEvaluation.aspx">»&nbsp; Course Evaluation</a></li></ul></li><li><a class="nav_MNU" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#">»&nbsp; Reports</a><ul><li><a class="nav_URL" href="https://sismed.merit.edu.eg/UI/Modular/RPT_MOD_STUD_SCHDL.aspx">»&nbsp; Student Schedule</a></li><li><a class="nav_URL" href="https://sismed.merit.edu.eg/UI/StudentView/StudExamCommScheduleReport_UOB.aspx">»&nbsp; Exam Schedule</a></li><li><a class="nav_URL" href="https://sismed.merit.edu.eg/UI/FinancialAdminView/RPT_STUDFEES_CLAIM.aspx">»&nbsp; Financial claim and permission to pay</a></li></ul></li><li><a class="nav_MNU" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#">»&nbsp; My Preferences</a><ul><li><a class="nav_URL" href="https://sismed.merit.edu.eg/UI/StudentView/StudentTopLink.aspx">»&nbsp; Top Link Preferences</a></li></ul></li><li><a class="nav_MNU" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#">»&nbsp; مطالبة مالية واذن دفع المصروفات الدراسية</a><ul><li><a class="nav_URL" href="https://sismed.merit.edu.eg/UI/FinancialAdminView/RPT_STUDFEES_CLAIM.aspx">»&nbsp; اذن دفع المصروفات الدراسية </a></li></ul></li><li><a class="nav_HIDE" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#"></a></li><li><a class="nav_HIDE" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#"></a></li><li><a class="nav_HIDE" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#"></a></li><li><a class="nav_HIDE" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#"></a></li><li><a class="nav_HIDE" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#"></a></li><li><a class="nav_HIDE" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#"></a></li><li><a class="nav_HIDE" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#"></a></li><li><a class="nav_HIDE" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#"></a></li><li><a class="nav_HIDE" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#"></a></li><li><a class="nav_HIDE" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#"></a></li><li><a class="nav_HIDE" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#"></a></li><li><a class="nav_HIDE" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#"></a></li><li><a class="nav_HIDE" href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#"></a></li></ul></nav>
+                            </div>
+                            <!--menu_left-->
+                        </div>
+                        <!--overview-->
+                    </div>
+                    <!--viewport-->
+                </div>
+            </div>
+            <!--scrollbar_menu_left-->
+
+            <div id="content-wrapper">
+                <div id="top_header">
+                    <div class="holder">
+                        <div id="logo_text">
+                            <div id="logo">
+                                <img src="./Student View_files/logo_Pages.png" id="ctl00_univImg">
+                            </div>
+                            
+                            <!--logo-->
+                            <div id="namelogo">
+                                
+                            </div>
+                            <!--namelogo-->
+                        </div>
+                        <!--logo_text-->
+                        <div id="welcome">
+                            <div id="name_welcome">
+                                <p>
+                                    &nbsp;|&nbsp;Student View
+                                </p>
+                                <p>
+                                    &nbsp;<span id="ctl00_lblUser" title="241010499"><span style="font-size:9px">Arwa Abdullah Abdulmoneim Abdullah</span></span>
+                                </p>
+                                <h2>
+                                    <span id="ctl00_lblWelcome">Welcome</span></h2>
+                            </div>
+                            <!--name_welcome-->
+                            <div class="logo_Text">
+                                Faculty of Medicine
+                            </div>
+                            <div id="admin">
+                                <p>
+                                    <span id="ctl00_lblAdmYear">2025/2026</span>
+                                    &nbsp;-&nbsp;
+                                <span id="ctl00_lblAdmSem">Spring</span>
+                                </p>
+                            </div>
+                            <!--admin-->
+                        </div>
+                        <!--welcome-->
+                    </div>
+                    <!--holder-->
+                </div>
+                <!--top_header-->
+                
+
+                <div class="all_menu">
+                    <div class="holder">
+                        <div class="menu_master_icons">
+                            <ul class="all_master_icons">
+
+                                <li class="image_menu">
+                                    <a href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#" id="menu" onclick="javascript:window.scroll(0,0);" class="ico fl">
+                                        <img src="./Student View_files/menu.png" id="ctl00_Img9"></a>
+                                </li>
+
+
+                                <li class="home_title_page">
+                                    
+                                    <span id="ctl00_lblPageTitle">Semester Results</span>
+                                </li>
+                                <li>
+                                    <script type="text/javascript">
+                                        function TickerJS() {
+                                            var options = {
+                                                newsList: "#newsTicker",
+                                                startDelay: 5,
+                                                placeHolder1: "_"
+                                            };
+
+                                            $().newsTicker(options);
+                                        }
+                                        (function ($) {
+                                            function runTicker(settings) {
+                                                if (settings.firstRun == 1) {
+                                                    currentLength = settings.currentLength;
+                                                    currentItem = settings.currentItem; settings.firstRun = 0
+                                                }
+                                                if (currentItem == settings.newsItemCounter + 1) {
+                                                    currentItem = 0
+                                                } if (currentLength == 0) {
+                                                    $(settings.newsList).empty().append('<li><a href="' + settings.newsLinks[currentItem] + '"></a></li>')
+                                                } if (currentLength % 2 == 0) { placeHolder = settings.placeHolder1 } else {
+                                                    placeHolder = settings.placeHolder2
+                                                } if (currentLength <= settings.newsItems[currentItem].length + 1) {
+                                                    var tickerText = settings.newsItems[currentItem].substring(0, currentLength); $(settings.newsList + ' li a').text(tickerText + placeHolder); currentLength++; setTimeout(function () { runTicker(settings); settings = null }, settings.tickerRate)
+                                                } else { $(settings.newsList + ' li a').text(settings.newsItems[currentItem]); currentLength = 0; currentItem++; setTimeout(function () { runTicker(settings); settings = null }, settings.loopDelay) }
+                                            } $.fn.extend({ newsTicker: function (settings) { settings = jQuery.extend({ newsList: "#news", tickerRate: 80, startDelay: 500, loopDelay: 2000, placeHolder1: " |", placeHolder2: "_" }, settings); var newsItems = new Array(); var newsLinks = new Array(); var newsItemCounter = 0; $(settings.newsList + ' li a').each(function () { newsItems[newsItemCounter] = $(this).text(); newsLinks[newsItemCounter] = $(this).attr('href'); newsItemCounter++ }); settings = jQuery.extend(settings, { newsItems: newsItems, newsLinks: newsLinks, newsItemCounter: newsItemCounter - 1, currentItem: 0, currentLength: 0, firstRun: 1 }); setTimeout(function () { runTicker(settings); settings = null }, settings.startDelay) } })
+                                        })(jQuery);
+                                        $(document).ready(function () {
+                                            try {
+                                                TickerJS();
+                                            }
+                                            catch (ex) { }
+                                        });
+                                    </script>
+                                    <div id="ctl00_news" class="Ticker" style="display:none;">
+                                        <ul id="newsTicker" class="Ticker"><li><a href="https://sismed.merit.edu.eg/UI/StudentView/student_sem_work.aspx#">SIS - University of B_</a></li></ul>
+                                    </div>
+                                </li>
+                                <li class="master_icons">
+                                    <div id="language">
+                                        <a id="ctl00_lnkLogout" onclick="javascript:eraseCookie();" href="https://sismed.merit.edu.eg/ClearSession.ashx?Type=Admission&amp;ID=10583"><img src="./Student View_files/out.png" id="ctl00_Img6" title="Log Out"></a>
+                                    </div>
+                                </li>
+                             
+
+                                <li class="master_icons">
+                                    <div id="Div4">
+                                        <a id="ctl00_lnkChngPSW" href="https://sismed.merit.edu.eg/UI/Admission/ChngPassword.aspx"><img src="./Student View_files/Key.png" id="ctl00_Img8" title="Change password"></a>
+                                    </div>
+                                </li>
+                                <li class="master_icons">
+                                    <div id="Div3">
+                                        <a id="ctl00_lnkAr" class="Link" href="javascript:__doPostBack(&#39;ctl00$lnkAr&#39;,&#39;&#39;)"><img src="./Student View_files/arabic.png" id="ctl00_Img4" title="عربي"></a>
+                                    </div>
+                                </li>
+                                <li class="master_icons">
+                                    <div id="Div2">
+                                        <a id="ctl00_lnkEn" class="Link" href="javascript:__doPostBack(&#39;ctl00$lnkEn&#39;,&#39;&#39;)"><img src="./Student View_files/engilsh.png" id="ctl00_Img5" title="English"></a>
+                                    </div>
+                                </li>
+                                <li class="master_icons">
+                                    <div id="Div1">
+                                        <a id="ctl00_lnkHome" href="https://sismed.merit.edu.eg/UI/StudentView/Home.aspx"><img src="./Student View_files/home.png" id="ctl00_Img1" title="Home Page"></a>
+                                    </div>
+                                </li>
+                                 <li class="master_icons">
+                                    
+                                </li>
+                                 <li class="master_icons">
+                                    <div id="Div_NewTask">
+                                        <a id="ctl00_lnkNewTask" style="display:none;"><img src="./Student View_files/TaskNew.png" id="ctl00_Img7" width="30" height="30" title="Task Page"></a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!--all_master_icons-->
+
+                        </div>
+                        <!--menu_master_icons-->
+                        <div id="Div300" style="float: left; display: inline-block;">
+                            
+                        </div>
+
+                        <!-- /header -->
+                    </div>
+                </div>
+
+                <!--holder-->
+                
+                <!--navigation-->
+                <div id="all_content">
+                    <div class="holder">
+                        <div id="all_info">
+
+                            <div id="scroll_all_info">
+                                <div id="scrollbar_all_info">
+                                    
+                                    <!--scrollbar-->
+                                    
+                                    
+    <input type="hidden" name="ctl00$cntphmaster$hf_ISModular" id="ctl00_cntphmaster_hf_ISModular" value="1">
+    <div id="ctl00_cntphmaster_Panel2" class="all_details" style="width:100%;">
+	
+        <table>
+            <tbody><tr>
+                <td class="all_grid_form_name">
+                    <span id="ctl00_cntphmaster_lblAcadYear">Academic Year</span>
+                </td>
+                <td class="input_normal">
+                    
+                    <span id="ctl00_cntphmaster_lblAcadyearStud">2025/2026</span>
+                </td>
+
+            </tr>
+            <tr>
+                <td class="all_grid_form_name">
+                    <span id="ctl00_cntphmaster_lblSemester">Semester</span>
+
+                </td>
+                <td class="input_normal">
+                    
+                    <span id="ctl00_cntphmaster_lblSemesterStud">Spring</span>
+                </td>
+
+            </tr>
+            <tr id="ctl00_cntphmaster_tr_ExamType">
+		<td class="all_grid_form_name">
+                    
+
+                </td>
+		<td class="input_normal">
+                    
+                </td>
+	</tr>
+	
+            <tr>
+
+                <td colspan="5" align="center">
+                    
+                    <br>
+                    
+                </td>
+
+            </tr>
+        </tbody></table>
+    
+</div>
+
+    
+    <div id="ctl00_cntphmaster_pnl_Modular" class="all_details" style="width:100%;">
+	
+         <table class="all_grid_form">
+            <tbody><tr>
+                <td class="all_grid_form_name">
+                    <span id="ctl00_cntphmaster_Label9" style="font-weight:bold;"> Cumulative Overall Grade </span>
+                </td>
+                <td>
+                    <strong>:</strong>
+                    <span id="ctl00_cntphmaster_lblResultGradingLevel" style="font-weight:bold;"> Excellent</span></td>
+
+
+                <td class="all_grid_form_name" style="width:15%">
+                    <span id="ctl00_cntphmaster_Label11" style="font-weight:bold;">Total Percent</span>
+                </td>
+                <td>
+                    <strong>: </strong>
+                    <span id="ctl00_cntphmaster_lblTotalPrecent" style="font-weight:bold;">92.32</span></td>
+
+                
+            </tr>
+             </tbody></table>
+        
+</div>
+
+    
+    <div id="ctl00_cntphmaster_Panel1" class="all_details" style="width:100%;">
+	
+        
+        <div>
+		<table class="GrdTable" cellspacing="0" cellpadding="2" border="0" id="ctl00_cntphmaster_GridView1" style="background-color:White;width:100%;border-collapse:collapse;">
+			<tbody><tr class="table_Header" align="center">
+				<th scope="col">Course Code</th><th scope="col">Course Name</th><th scope="col">Grade</th>
+			</tr><tr class="table_Row" align="center">
+				<td align="center">GIT-207</td><td align="center">الجهاز الهضمى</td><td align="center">
+                        <span id="ctl00_cntphmaster_GridView1_ctl02_GRADING_DESCR">A</span>
+                    </td>
+			</tr><tr class="table_AlternatingRow" align="center">
+				<td align="center">HIC-211</td><td align="center">الصحة والمرض في المجتمع</td><td align="center">
+                        <span id="ctl00_cntphmaster_GridView1_ctl03_GRADING_DESCR">B</span>
+                    </td>
+			</tr><tr class="table_Row" align="center">
+				<td align="center">IPC-235</td><td align="center">مقدمة في رعاية المريض 3</td><td align="center">
+                        <span id="ctl00_cntphmaster_GridView1_ctl04_GRADING_DESCR">A</span>
+                    </td>
+			</tr><tr class="table_AlternatingRow" align="center">
+				<td align="center">SMU-208</td><td align="center">الجلد والجهاز العضلي والهيكلي</td><td align="center">
+                        <span id="ctl00_cntphmaster_GridView1_ctl05_GRADING_DESCR">A</span>
+                    </td>
+			</tr><tr class="table_Row" align="center">
+				<td align="center">UNI4</td><td align="center">السكان والبيئة وحقوق الانسان</td><td align="center">
+                        <span id="ctl00_cntphmaster_GridView1_ctl06_GRADING_DESCR">P</span>
+                    </td>
+			</tr><tr class="table_Header" align="center">
+				<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+			</tr>
+		</tbody></table>
+	</div>
+
+        <div style="position:fixed">  
+        <input type="hidden" id="ctl00_cntphmaster_ASPxPopupControl3WS" name="ctl00_cntphmaster_ASPxPopupControl3WS" value="0:0:-1:-10000:-10000:0:600px:-10000:1"><div id="ctl00_cntphmaster_ASPxPopupControl3_PW-1" style="position:absolute;left:0px;top:0px;z-index:10000;visibility:hidden;display:none;">
+		<table id="ctl00_cntphmaster_ASPxPopupControl3_PWST-1" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;border-collapse:separate;position:relative;">
+			<tbody><tr>
+				<td class="dxpcControl" onmousedown="aspxPWMDown(event,&#39;ctl00_cntphmaster_ASPxPopupControl3&#39;,-1,false)" style="width:600px;cursor:default;"><table id="ctl00_cntphmaster_ASPxPopupControl3_CLW-1" cellspacing="0" cellpadding="0" border="0" style="width:600px;border-collapse:collapse;border-collapse:separate;">
+					<tbody><tr>
+						<td id="ctl00_cntphmaster_ASPxPopupControl3_PWH-1" class="dxpcHeader" onmousedown="aspxPWDGMDown(event,&#39;ctl00_cntphmaster_ASPxPopupControl3&#39;,-1)" style="cursor:move;padding-left:12px;padding-right:2px;padding-top:2px;padding-bottom:2px;-khtml-user-select:none;"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;border-collapse:separate;">
+							<tbody><tr>
+								<td class="dxpc" style="width:100%;">Course Assessment</td><td style="padding-left:4px;"><table cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;border-collapse:separate;">
+									<tbody><tr>
+										<td id="ctl00_cntphmaster_ASPxPopupControl3_HCB-1" class="dxpcCloseButton" onclick="aspxPWCBClick(event, &#39;ctl00_cntphmaster_ASPxPopupControl3&#39;,-1)" onmousedown="return aspxPWCBMDown(event);" style="cursor:pointer;"><img id="ctl00_cntphmaster_ASPxPopupControl3_HCB-1Img" class="dxWeb_pcCloseButton" src="./Student View_files/DXR(7).axd" alt="[Close]"></td>
+									</tr>
+								</tbody></table></td>
+							</tr>
+						</tbody></table></td>
+					</tr><tr>
+						<td id="ctl00_cntphmaster_ASPxPopupControl3_PWC-1" class="dxpcContent" style="height:100%;border-top-width:0px;"><div id="ctl00_cntphmaster_ASPxPopupControl3_CSD-1" class="dxpcContentPaddings">
+							
+                    <div>
+
+							</div>
+                            
+                    
+						</div></td>
+					</tr>
+				</tbody></table></td><td style="background:url(&#39;/DXR.axd?r=1_25-tZwj7&#39;) no-repeat left top;"></td>
+			</tr><tr>
+				<td style="background:url(&#39;/DXR.axd?r=1_24-tZwj7&#39;) no-repeat left top;"></td><td style="background:url(&#39;/DXR.axd?r=1_26-tZwj7&#39;) no-repeat left top;"><div style="height:5px;width:5px;">
+
+				</div></td>
+			</tr>
+		</tbody></table>
+	</div><div id="ctl00_cntphmaster_ASPxPopupControl3_DXPWMB-1" class="dxpcModalBackground" style="position:absolute;visibility:hidden;left:0px;top:0px;z-index:9999;">
+
+	</div><script id="dxss_1557614989" type="text/javascript">
+<!--
+aspxAddHoverItems('ctl00_cntphmaster_ASPxPopupControl3',[[['dxpcCloseButtonHover'],[''],['HCB-1'],,[['']],['Img']]]);
+
+var dxo = new ASPxClientPopupControl('ctl00_cntphmaster_ASPxPopupControl3');
+window['ctl00_cntphmaster_ASPxPopupControl3'] = dxo;
+dxo.uniqueID = 'ctl00$cntphmaster$ASPxPopupControl3';
+dxo.closeAction='CloseButton';
+dxo.popupHorizontalAlign='WindowCenter';
+dxo.popupVerticalAlign='WindowCenter';
+dxo.isPopupPositionCorrectionOn=false;
+dxo.hideBodyScrollWhenModal = false;
+dxo.allowDragging=true;
+dxo.width=600;
+dxo.height=0;
+dxo.popupElementID='LinkButton1';
+dxo.InlineInitialize();
+
+//-->
+</script>
+             </div>
+    
+</div>
+
+    
+    
+    
+    
+
+    <div class="all_details" style="width:100%;">
+	
+        <span class="title_all_details">
+            <img id="ctl00_cntphmaster_Image1" src="./Student View_files/green_balls.png" style="border-width:0px;">
+            <span id="ctl00_cntphmaster_Label20">Grades Symbols</span>
+        </span>
+        <br>
+
+        <table width="100%"><tbody><tr><th style="font: bold; align-content: center" align="center">Grade</th><td style="align-content: center" align="center">A</td><td style="align-content: center" align="center">B</td><td style="align-content: center" align="center">C</td><td style="align-content: center" align="center">D</td><td style="align-content: center" align="center">F</td><td style="align-content: center" align="center">-F</td></tr><tr><td style="font: bold; align-content: center" align="center">Symbole</td><td style="align-content: center" align="center">A</td><td style="align-content: center" align="center">B</td><td style="align-content: center" align="center">C</td><td style="align-content: center" align="center">D</td><td style="align-content: center" align="center">F</td><td style="align-content: center" align="center">-F</td></tr></tbody></table>
+        
+    
+</div>
+   
+
+                                    
+                                    <!--overview-->
+                                    
+                                    <!--viewport-->
+                                </div>
+                                <!--scrollbar_all_info-->
+                            </div>
+                            <!--scroll_all_info-->
+                        </div>
+                        <!--all_info-->
+                    </div>
+                    <!--holder-->
+                </div>
+                <!--all_content-->
+                <div id="footer">
+                    <div class="holder">
+                        <p>
+                            ©&nbsp;Copyright 2023 . <a href="https://informatique-edu.com/">Informatique Education</a> . All Rights Reserved
+                        </p>
+                        <div id="umis">
+                            <img src="./Student View_files/umis.png" id="ctl00_Img3">
+                        </div>
+                        <!--umis-->
+                    </div>
+                    <!--holder-->
+                </div>
+                <!--footer-->
+            </div>
+            <!--content-->
+
+            
+            <!--scrollbar_help-->
+        </div>
+        <!--wrapper-->
+        <script src="./Student View_files/AfterPageLoadOperations.js.download" type="text/javascript"></script>
+        
+        
+        <input name="ctl00$txthdndegreeclassctrl_Ids" type="text" value="0" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$txthdndegreeclassctrl_Ids\&#39;,\&#39;\&#39;)&#39;, 0)" onkeypress="if (WebForm_TextBoxKeyHandler(event) == false) return false;" id="ctl00_txthdndegreeclassctrl_Ids" style="display:none;">
+    
+<script type="text/javascript">
+//<![CDATA[
+var eWorld_NumericBox_Items =  new Array(new NumericBox_Item('ctl00_FixNumericBoxProblem', true, false, "^[-]?\\d*(\\.\\d*)?$", -1, '$', '.', ',', -1, '', false));
+var Page_Validators =  new Array(document.getElementById("ctl00_RegularExpressionValifdator4"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_RegularExpressionValifdator4 = document.all ? document.all["ctl00_RegularExpressionValifdator4"] : document.getElementById("ctl00_RegularExpressionValifdator4");
+ctl00_RegularExpressionValifdator4.controltovalidate = "ctl00_txtFixCalendarProblem";
+ctl00_RegularExpressionValifdator4.errormessage = "Invalid Date Format";
+ctl00_RegularExpressionValifdator4.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+ctl00_RegularExpressionValifdator4.validationexpression = "^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[1,3-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+eWorld_NumericBox_Items = new Array(new NumericBox_Item('ctl00_FixNumericBoxProblem', true, false, '^[-]?\\d*(\\.?\\d*)?$', -1, '$', '.', ',', -1, '', false));
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.MaskedEditBehavior, {"ClientStateFieldID":"ctl00_MaskedBirthDate_ClientState","CultureAMPMPlaceholder":"ص;م","CultureCurrencySymbolPlaceholder":"ج.م.‏","CultureDateFormat":"DMY","CultureDatePlaceholder":"/","CultureDecimalPlaceholder":".","CultureName":"ar-EG","CultureThousandsPlaceholder":",","CultureTimePlaceholder":":","Mask":"99/99/9999","MaskType":1,"UserDateFormat":1,"id":"ctl00_MaskedBirthDate"}, null, null, $get("ctl00_txtFixCalendarProblem"));
+});
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.CalendarBehavior, {"button":$get("ctl00_btnFixCalendarProblem"),"cssClass":"Calendar","format":"dd/MM/yyyy","id":"ctl00_calFixCalendarProblem"}, null, null, $get("ctl00_txtFixCalendarProblem"));
+});
+
+document.getElementById('ctl00_RegularExpressionValifdator4').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_RegularExpressionValifdator4'));
+}
+//]]>
+</script>
+<input type="hidden" name="DXScript" value="1_42,1_74,1_67,1_64"></form>
+    <script type="text/javascript">
+        function searchMenue() {
+
+            var input, filter;
+            input = document.getElementById("ctl00_txtSearch");
+            filter = input.value.toUpperCase();
+            if (filter == "") {
+
+                $('.expanded').each(function () {
+                    $(this).removeClass('expanded');
+                })
+                $('#nav li ul:not(.expanded)').hide(500);
+                $('#nav li').each(function () {
+                    $(this).css("display", "")
+                })
+                return false
+            }
+          
+            $('#nav li').each(function () {
+            
+                var hasMatch = filter.length == 0 || $(this).text().toLowerCase().indexOf(filter.toLowerCase()) > 0;
+                
+                if (hasMatch) {
+                    $(this).css("display", "")
+                    $(this).closest("ul").show('fast');
+                    $(this).closest("ul").addClass('expanded');
+
+                } else {
+                    
+                    $(this).css("display", "none")
+                    
+                }
+            })
+            
+        }
+        
+</script>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
